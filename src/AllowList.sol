@@ -4,9 +4,9 @@ pragma solidity ^0.8.15;
 import {Delegatable} from "lib/delegatable-sol/contracts/Delegatable.sol";
 import {DelegatableCore} from "lib/delegatable-sol/contracts/DelegatableCore.sol";
 
-// import "lib/OpenZeppelin/openzeppelin-contracts/access/Ownable.sol";
+import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract AllowList is Delegatable {
+contract AllowList is Delegatable, Ownable {
     constructor() Delegatable("AllowList", "1") {}
 
     mapping(address => bool) allowlist;
