@@ -9,14 +9,19 @@ import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 contract AllowList is Delegatable, Ownable {
     constructor() Delegatable("AllowList", "1") {}
 
-    mapping(address => bool) allowlist;
+    mapping(address => bool) public allowlist;
 
-    function setAllowItem(address addr) public {
+    event AllowItemAdded(address indexed addr);
+    event AllowItemRemoved(address indexed addr);
+
+    function setAllowItem(address addr) public onlyOwner {
         allowlist[addr] = true;
+        emit AllowItemAdded(addr);
     }
 
-    function removeAllowItem(address addr) public {
+    function removeAllowItem(address addr) public onlyOwner {
         allowlist[addr] = false;
+        emit AllowItemRemoved(addr);
     }
 
     function verify(address addr) public view returns (bool) {
