@@ -1,0 +1,27 @@
+{
+  "name": "allowlist-contract",
+  "version": "1.0.0",
+  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
+  "main": "generateInvocation.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxdao-official/allowlist-contract.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lxdao-official/allowlist-contract/issues"
+  },
+  "homepage": "https://github.com/lxdao-official/allowlist-contract#readme",
+  "dependencies": {
+    "eth-delegatable-utils": "^4.1.2"
+  }
+}

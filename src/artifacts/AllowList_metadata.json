@@ -1,0 +1,1545 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AllowItemAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AllowItemRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "enforcer",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "terms",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Caveat[]",
+						"name": "_input",
+						"type": "tuple[]"
+					}
+				],
+				"name": "GET_CAVEAT_ARRAY_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "enforcer",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "terms",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Caveat",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_CAVEAT_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "delegate",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "authority",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "enforcer",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes",
+										"name": "terms",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct Caveat[]",
+								"name": "caveats",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Delegation",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_DELEGATION_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "to",
+												"type": "address"
+											},
+											{
+												"internalType": "uint256",
+												"name": "gasLimit",
+												"type": "uint256"
+											},
+											{
+												"internalType": "bytes",
+												"name": "data",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct Transaction",
+										"name": "transaction",
+										"type": "tuple"
+									},
+									{
+										"components": [
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "delegate",
+														"type": "address"
+													},
+													{
+														"internalType": "bytes32",
+														"name": "authority",
+														"type": "bytes32"
+													},
+													{
+														"components": [
+															{
+																"internalType": "address",
+																"name": "enforcer",
+																"type": "address"
+															},
+															{
+																"internalType": "bytes",
+																"name": "terms",
+																"type": "bytes"
+															}
+														],
+														"internalType": "struct Caveat[]",
+														"name": "caveats",
+														"type": "tuple[]"
+													}
+												],
+												"internalType": "struct Delegation",
+												"name": "delegation",
+												"type": "tuple"
+											},
+											{
+												"internalType": "bytes",
+												"name": "signature",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct SignedDelegation[]",
+										"name": "authority",
+										"type": "tuple[]"
+									}
+								],
+								"internalType": "struct Invocation[]",
+								"name": "batch",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "nonce",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "queue",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct ReplayProtection",
+								"name": "replayProtection",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct Invocations",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_INVOCATIONS_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "to",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasLimit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bytes",
+										"name": "data",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct Transaction",
+								"name": "transaction",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "delegate",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes32",
+												"name": "authority",
+												"type": "bytes32"
+											},
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "enforcer",
+														"type": "address"
+													},
+													{
+														"internalType": "bytes",
+														"name": "terms",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct Caveat[]",
+												"name": "caveats",
+												"type": "tuple[]"
+											}
+										],
+										"internalType": "struct Delegation",
+										"name": "delegation",
+										"type": "tuple"
+									},
+									{
+										"internalType": "bytes",
+										"name": "signature",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct SignedDelegation[]",
+								"name": "authority",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Invocation[]",
+						"name": "_input",
+						"type": "tuple[]"
+					}
+				],
+				"name": "GET_INVOCATION_ARRAY_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "to",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasLimit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bytes",
+										"name": "data",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct Transaction",
+								"name": "transaction",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "delegate",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes32",
+												"name": "authority",
+												"type": "bytes32"
+											},
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "enforcer",
+														"type": "address"
+													},
+													{
+														"internalType": "bytes",
+														"name": "terms",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct Caveat[]",
+												"name": "caveats",
+												"type": "tuple[]"
+											}
+										],
+										"internalType": "struct Delegation",
+										"name": "delegation",
+										"type": "tuple"
+									},
+									{
+										"internalType": "bytes",
+										"name": "signature",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct SignedDelegation[]",
+								"name": "authority",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Invocation",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_INVOCATION_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "queue",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ReplayProtection",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_REPLAYPROTECTION_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "delegate",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes32",
+										"name": "authority",
+										"type": "bytes32"
+									},
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "enforcer",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes",
+												"name": "terms",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct Caveat[]",
+										"name": "caveats",
+										"type": "tuple[]"
+									}
+								],
+								"internalType": "struct Delegation",
+								"name": "delegation",
+								"type": "tuple"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignedDelegation[]",
+						"name": "_input",
+						"type": "tuple[]"
+					}
+				],
+				"name": "GET_SIGNEDDELEGATION_ARRAY_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "delegate",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes32",
+										"name": "authority",
+										"type": "bytes32"
+									},
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "enforcer",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes",
+												"name": "terms",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct Caveat[]",
+										"name": "caveats",
+										"type": "tuple[]"
+									}
+								],
+								"internalType": "struct Delegation",
+								"name": "delegation",
+								"type": "tuple"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignedDelegation",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_SIGNEDDELEGATION_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "to",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasLimit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Transaction",
+						"name": "_input",
+						"type": "tuple"
+					}
+				],
+				"name": "GET_TRANSACTION_PACKETHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "allowlist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "to",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasLimit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bytes",
+										"name": "data",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct Transaction",
+								"name": "transaction",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "delegate",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes32",
+												"name": "authority",
+												"type": "bytes32"
+											},
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "enforcer",
+														"type": "address"
+													},
+													{
+														"internalType": "bytes",
+														"name": "terms",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct Caveat[]",
+												"name": "caveats",
+												"type": "tuple[]"
+											}
+										],
+										"internalType": "struct Delegation",
+										"name": "delegation",
+										"type": "tuple"
+									},
+									{
+										"internalType": "bytes",
+										"name": "signature",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct SignedDelegation[]",
+								"name": "authority",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Invocation[]",
+						"name": "batch",
+						"type": "tuple[]"
+					}
+				],
+				"name": "contractInvoke",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "domainHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "delegate",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "authority",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "enforcer",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes",
+										"name": "terms",
+										"type": "bytes"
+									}
+								],
+								"internalType": "struct Caveat[]",
+								"name": "caveats",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Delegation",
+						"name": "delegation",
+						"type": "tuple"
+					}
+				],
+				"name": "getDelegationTypedDataHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "contractName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "verifyingContract",
+						"type": "address"
+					}
+				],
+				"name": "getEIP712DomainHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "to",
+												"type": "address"
+											},
+											{
+												"internalType": "uint256",
+												"name": "gasLimit",
+												"type": "uint256"
+											},
+											{
+												"internalType": "bytes",
+												"name": "data",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct Transaction",
+										"name": "transaction",
+										"type": "tuple"
+									},
+									{
+										"components": [
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "delegate",
+														"type": "address"
+													},
+													{
+														"internalType": "bytes32",
+														"name": "authority",
+														"type": "bytes32"
+													},
+													{
+														"components": [
+															{
+																"internalType": "address",
+																"name": "enforcer",
+																"type": "address"
+															},
+															{
+																"internalType": "bytes",
+																"name": "terms",
+																"type": "bytes"
+															}
+														],
+														"internalType": "struct Caveat[]",
+														"name": "caveats",
+														"type": "tuple[]"
+													}
+												],
+												"internalType": "struct Delegation",
+												"name": "delegation",
+												"type": "tuple"
+											},
+											{
+												"internalType": "bytes",
+												"name": "signature",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct SignedDelegation[]",
+										"name": "authority",
+										"type": "tuple[]"
+									}
+								],
+								"internalType": "struct Invocation[]",
+								"name": "batch",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "nonce",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "queue",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct ReplayProtection",
+								"name": "replayProtection",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct Invocations",
+						"name": "invocations",
+						"type": "tuple"
+					}
+				],
+				"name": "getInvocationsTypedDataHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "intendedSender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "queue",
+						"type": "uint256"
+					}
+				],
+				"name": "getNonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "to",
+														"type": "address"
+													},
+													{
+														"internalType": "uint256",
+														"name": "gasLimit",
+														"type": "uint256"
+													},
+													{
+														"internalType": "bytes",
+														"name": "data",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct Transaction",
+												"name": "transaction",
+												"type": "tuple"
+											},
+											{
+												"components": [
+													{
+														"components": [
+															{
+																"internalType": "address",
+																"name": "delegate",
+																"type": "address"
+															},
+															{
+																"internalType": "bytes32",
+																"name": "authority",
+																"type": "bytes32"
+															},
+															{
+																"components": [
+																	{
+																		"internalType": "address",
+																		"name": "enforcer",
+																		"type": "address"
+																	},
+																	{
+																		"internalType": "bytes",
+																		"name": "terms",
+																		"type": "bytes"
+																	}
+																],
+																"internalType": "struct Caveat[]",
+																"name": "caveats",
+																"type": "tuple[]"
+															}
+														],
+														"internalType": "struct Delegation",
+														"name": "delegation",
+														"type": "tuple"
+													},
+													{
+														"internalType": "bytes",
+														"name": "signature",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct SignedDelegation[]",
+												"name": "authority",
+												"type": "tuple[]"
+											}
+										],
+										"internalType": "struct Invocation[]",
+										"name": "batch",
+										"type": "tuple[]"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "nonce",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "queue",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct ReplayProtection",
+										"name": "replayProtection",
+										"type": "tuple"
+									}
+								],
+								"internalType": "struct Invocations",
+								"name": "invocations",
+								"type": "tuple"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignedInvocation[]",
+						"name": "signedInvocations",
+						"type": "tuple[]"
+					}
+				],
+				"name": "invoke",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "removeAllowItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "setAllowItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "verify",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "delegate",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes32",
+										"name": "authority",
+										"type": "bytes32"
+									},
+									{
+										"components": [
+											{
+												"internalType": "address",
+												"name": "enforcer",
+												"type": "address"
+											},
+											{
+												"internalType": "bytes",
+												"name": "terms",
+												"type": "bytes"
+											}
+										],
+										"internalType": "struct Caveat[]",
+										"name": "caveats",
+										"type": "tuple[]"
+									}
+								],
+								"internalType": "struct Delegation",
+								"name": "delegation",
+								"type": "tuple"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignedDelegation",
+						"name": "signedDelegation",
+						"type": "tuple"
+					}
+				],
+				"name": "verifyDelegationSignature",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"components": [
+											{
+												"components": [
+													{
+														"internalType": "address",
+														"name": "to",
+														"type": "address"
+													},
+													{
+														"internalType": "uint256",
+														"name": "gasLimit",
+														"type": "uint256"
+													},
+													{
+														"internalType": "bytes",
+														"name": "data",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct Transaction",
+												"name": "transaction",
+												"type": "tuple"
+											},
+											{
+												"components": [
+													{
+														"components": [
+															{
+																"internalType": "address",
+																"name": "delegate",
+																"type": "address"
+															},
+															{
+																"internalType": "bytes32",
+																"name": "authority",
+																"type": "bytes32"
+															},
+															{
+																"components": [
+																	{
+																		"internalType": "address",
+																		"name": "enforcer",
+																		"type": "address"
+																	},
+																	{
+																		"internalType": "bytes",
+																		"name": "terms",
+																		"type": "bytes"
+																	}
+																],
+																"internalType": "struct Caveat[]",
+																"name": "caveats",
+																"type": "tuple[]"
+															}
+														],
+														"internalType": "struct Delegation",
+														"name": "delegation",
+														"type": "tuple"
+													},
+													{
+														"internalType": "bytes",
+														"name": "signature",
+														"type": "bytes"
+													}
+												],
+												"internalType": "struct SignedDelegation[]",
+												"name": "authority",
+												"type": "tuple[]"
+											}
+										],
+										"internalType": "struct Invocation[]",
+										"name": "batch",
+										"type": "tuple[]"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "nonce",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "queue",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct ReplayProtection",
+										"name": "replayProtection",
+										"type": "tuple"
+									}
+								],
+								"internalType": "struct Invocations",
+								"name": "invocations",
+								"type": "tuple"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignedInvocation",
+						"name": "signedInvocation",
+						"type": "tuple"
+					}
+				],
+				"name": "verifyInvocationSignature",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"contractInvoke(((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[])": {
+					"params": {
+						"batch": "Invocation[] - The batch of invocations to process."
+					},
+					"returns": {
+						"_0": "success bool - Whether the batch of invocations was successfully processed."
+					}
+				},
+				"getDelegationTypedDataHash((address,bytes32,(address,bytes)[]))": {
+					"params": {
+						"delegation": "Delegation - The delegation to get the type of"
+					},
+					"returns": {
+						"_0": "bytes32 - The type of the delegation"
+					}
+				},
+				"getInvocationsTypedDataHash((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)))": {
+					"params": {
+						"invocations": "Invocations"
+					},
+					"returns": {
+						"_0": "bytes32 - The type of the Invocations"
+					}
+				},
+				"invoke(((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)),bytes)[])": {
+					"params": {
+						"signedInvocations": "SignedInvocation[] - The batch of signed invocations to process."
+					},
+					"returns": {
+						"success": "bool - Whether the batch of invocations was successfully processed."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"verifyInvocationSignature(((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)),bytes))": {
+					"params": {
+						"signedInvocation": "- The signed invocation to verify"
+					},
+					"returns": {
+						"_0": "address - The address of the account authorizing this invocation to act on its behalf."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"contractInvoke(((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[])": {
+					"notice": "Allows a smart contract to submit a batch of invocations for processing, allowing itself to be the delegate."
+				},
+				"domainHash()": {
+					"notice": "The hash of the domain separator used in the EIP712 domain hash."
+				},
+				"getDelegationTypedDataHash((address,bytes32,(address,bytes)[]))": {
+					"notice": "Returns the typehash for this contract's delegation signatures."
+				},
+				"getInvocationsTypedDataHash((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)))": {
+					"notice": "Returns the typehash for this contract's invocation signatures."
+				},
+				"invoke(((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)),bytes)[])": {
+					"notice": "Allows anyone to submit a batch of signed invocations for processing."
+				},
+				"verifyInvocationSignature(((((address,uint256,bytes),((address,bytes32,(address,bytes)[]),bytes)[])[],(uint256,uint256)),bytes))": {
+					"notice": "Verifies that the given invocation is valid."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/AllowList.sol": "AllowList"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lib/delegatable-sol/contracts/CaveatEnforcer.sol": {
+			"keccak256": "0x14ec17bfb3cc94c4a0a81bbddf681150be2b574176294cee3c6fb21ab0f62fa3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://922929b25a90eaa4121df55b5175d5a6676620e5b63624aeac9f3429090b77ce",
+				"dweb:/ipfs/QmdiLijJfYts6C29pdwFrzETmFByQ3txiYuDkL6WAgLpW1"
+			]
+		},
+		"lib/delegatable-sol/contracts/Delegatable.sol": {
+			"keccak256": "0x2fabe53eec516cc05bdbc31abcce0e18d613a37b66e159526bdc44d2caff4c5f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cc06c872de5932ec780c7a4431201aa911442d578c46617846ea2220c5996189",
+				"dweb:/ipfs/QmWhS3Ji4DnrXrEkwdUTPgettivb6mC5c14oARJPZjCwov"
+			]
+		},
+		"lib/delegatable-sol/contracts/DelegatableCore.sol": {
+			"keccak256": "0x2c1bdb3c6c307b63312116e609f8ba3223e326fbb4c086497cb855ca0e060485",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://da9555634c8a92853355f62b592e463805450fa2b45bef18699aa86b6167943f",
+				"dweb:/ipfs/QmSodYzc6SPYzLJXSE3WNmRYqJjiQxEUcuttGAAqNJFcTw"
+			]
+		},
+		"lib/delegatable-sol/contracts/TypesAndDecoders.sol": {
+			"keccak256": "0x62c25b5d5fd7e3390c184c776b29a08a4c3b9859efc54483114e6e8c817b4cfa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9c1b6569c596529558ef1b9798c53b2c1f878ccc2066330f017fc262d58d6b6b",
+				"dweb:/ipfs/QmUty5eT1Qm1wUNVbEq2GgmHiLiC2WPzLSjbxqro3GeLX4"
+			]
+		},
+		"lib/delegatable-sol/contracts/interfaces/IDelegatable.sol": {
+			"keccak256": "0x1b536288fc232c912492fd39e361bab56e81676b31225e1a33503819c604be11",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11a7c1dea1316e540a693c492880ee726025c1858e6ba77c7161a2147bf951e5",
+				"dweb:/ipfs/Qmbysr4dFzZqmQU3kFzzAFdxwCURNA2h5TTvZNzsvCiaox"
+			]
+		},
+		"lib/delegatable-sol/contracts/libraries/ECRecovery.sol": {
+			"keccak256": "0xdcd8b97fb382a5e43e7a9000515dfad14263e8ab7f548b276b5952e7970fee03",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae3816c5cde4741ecd04bbe9d0750e66c7db14b49a1073462f946b37838938f3",
+				"dweb:/ipfs/QmPrvkBdcdpFz633kiQGv1yQaZ354k2vYobtdtQDsTFEdD"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
+				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"src/AllowList.sol": {
+			"keccak256": "0x767f7b12cd0d6d829bc84a1948675ab32b0f8b1dbacae5256345ebe92eb58eac",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://8f0192b02e2486ba7aa46b9c2823a60e8d97246f56d3678e8c6c7eef6e61e59e",
+				"dweb:/ipfs/QmdZUDBM1d4PAZAXd8kQktMW9BzDUoXAThgL1FaDNpLz1H"
+			]
+		}
+	},
+	"version": 1
+}
